@@ -1,6 +1,12 @@
 # Spotify Playlist to CSV
 
-This is a tiny script I wrote to generate a CSV from a spotify playlist. It's written in JavaScript to take advantage of the [Spotify-URL-Info](https://github.com/microlinkhq/spotify-url-info) NPM package.
+This is a tiny script I wrote to generate a CSV from a Spotify playlist. It's written in JavaScript to take advantage of the [Spotify-URL-Info](https://github.com/microlinkhq/spotify-url-info) NPM package.
+
+The output CSV contains the following information on each track:
+
+```
+Artist(s), Title, Album, Date, URL, Cover Image URL
+```
 
 ## Dependencies
 
