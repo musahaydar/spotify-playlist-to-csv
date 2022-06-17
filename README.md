@@ -17,6 +17,12 @@ which can be installed via the following command:
 npm install spotify-url-info
 ```
 
+Spotify-URL-Info depends on the [Isomorphic Unfetch](https://www.npmjs.com/package/isomorphic-unfetch) package, which can be installed via the following command:
+
+```
+npm install isomorphic-unfetch
+```
+
 ## Usage
 
 Spotify Playlist to CSV takes as input a file containing a list of Spotify track URLs. This can be easily generated via the Spotify client. Open a playlist, press `CTRL + A` to select all the tracks, and then press `CTRL + C` to copy their URLs. Then, paste the URLs into a text editor (e.g. Notepad).

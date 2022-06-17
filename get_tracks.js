@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const readline = require('readline')
-const spotify = require('spotify-url-info')
+const fetch = require('isomorphic-unfetch')
+const { getData, getPreview, getTracks, getDetails } = require('spotify-url-info')(fetch)
 
 if(process.argv.length !== 3) {
     console.log("Usage: ./get_tracks.js <filename>");
@@ -30,7 +31,7 @@ async function readFile() {
     for await (const line of rl) {
         // use getData to get album info
         var err = false
-        const trackData = await spotify.getData(line)
+        const trackData = await getData(line)
             .catch((err) => {
                 if(!err) {
                     console.log("[ERROR] could not fetch info for URL " + line);
@@ -39,7 +40,7 @@ async function readFile() {
             });
         // use getPreview to get the rest of the data
         // note: check if date is undefined before writing
-        const trackPreview = await spotify.getPreview(line)
+        const trackPreview = await getPreview(line)
             .catch((err) => {
                 if(!err) {
                     console.log("[ERROR] could not fetch info for URL " + line);
